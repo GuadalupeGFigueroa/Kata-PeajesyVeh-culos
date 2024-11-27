@@ -1,19 +1,17 @@
 package dev.guadalupe.katavehiclesandtolls.vehicle;
 
-public abstract class Vehicle {
-
-    // Clase abstracta
+public abstract class Vehicle { // Clase abstracta
 
     // Atributos comunes a todos los vehículos
     private long id;
-    private String licencePlate;
-    protected long amounth; // Se puede modificar por las subclases
+    private String licensePlate;
+    protected long toll; // Se puede modificar por las subclases
 
     // Constructor
-    public Vehicle(long id, String licencePlate) {
-        this.id = id;
-        this.licencePlate = licencePlate;
-        this.amounth = 0; // Inicializado a 0, será calculado en las subclases
+    public Vehicle(long id, String licensePlate) {
+        setId(id);
+        setLicensePlate(licensePlate);
+        this.toll = 0; // Inicializado a 0, será calculado en las subclases
     }
 
     // Métodos getter y setter
@@ -22,23 +20,35 @@ public abstract class Vehicle {
     }
 
     public void setId(long id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("ID must be greater than 0");
+        }
         this.id = id;
     }
 
-    public String getlicencePlate() {
-        return licencePlate;
+    public String getLicensePlate() {
+        return licensePlate;
     }
 
-    public void setlicencePlate(String licencePlate) {
-        this.licencePlate = licencePlate;
+    public void setLicensePlate(String licensePlate) {
+        //Añadimos lógica para garantizar que el valor de la matrícula no pueda ser nulo
+
+        if (licensePlate == null || licensePlate.isEmpty()) {
+            throw new IllegalArgumentException("License plate cannot be null or empty");
+        }
+        if (!licensePlate.matches("^[A-Z0-9-]+$")) { 
+            //La expresión regular /[a-z0-9-]/ significa una cadena que contiene cualquier letra minúscula o número o un - .
+            throw new IllegalArgumentException("Invalid license plate format");
+        }
+        this.licensePlate = licensePlate;
     }
 
-    public long getamounth() {
-        return amounth;
+    public long getToll() {
+        return toll;
     }
 
     // Método abstracto: las subclases deberán implementarlo
-    public abstract void calculateAmounth();
+    public abstract void calculateToll();
 
     // Método opcional para registrar el pago
     public boolean recordPayment() {
