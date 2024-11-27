@@ -7,7 +7,7 @@ public class Truck extends Vehicle {
 
     public Truck(long id, String licencePlate, int axles) {
         super(id, licencePlate);
-        this.axles = axles;
+        setAxles(axles);
     }
 
     public int getAxles() {
@@ -15,12 +15,15 @@ public class Truck extends Vehicle {
     }
 
     public void setAxles(int axles) {
+        if (axles <= 0) {
+            throw new IllegalArgumentException("Axles must be greater than 0");
+        }
         this.axles = axles;
     }
 
     @Override //sobre escribe el valor 
-    public void calculateAmounth() {
-        this.amounth = 50 * axles; // Calculamos el peaje según el número de ejes
+    public void calculateToll() {
+        this.toll = 50 * axles; // Calculamos el peaje según el número de ejes
     }
  
 }
