@@ -10,8 +10,8 @@ public class Car extends Vehicle {
 
     @Override
     // Aplicamos esta anotación a un método para indicar que el mismo sobreescribe el método heredado de una clase o interfaz.
-    public void calculateAmounth() {
-        this.amounth = 100; // Peaje fijo para coche
+    public void calculateToll() {
+        this.toll = 100; // Peaje fijo para coche
     }
         
 }

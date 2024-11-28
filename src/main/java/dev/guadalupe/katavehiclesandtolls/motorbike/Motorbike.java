@@ -8,8 +8,8 @@ public class Motorbike extends Vehicle {
     }
     @Override
     //Aplicamos esta anotación a un método para indicar que el mismo sobreescribe el método heredado de una clase o interfaz
-    public void calculateAmounth(){
-        this.amounth = 50; //Peaje fijo para las motos
+    public void calculateToll(){
+        this.toll = 50; //Peaje fijo para las motos
     }
 
 }
