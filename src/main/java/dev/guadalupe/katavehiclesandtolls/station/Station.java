@@ -34,7 +34,7 @@ public class Station {
             System.out.println("- " + v.getClass().getSimpleName() + " | Plate: " + v.getLicensePlate() + " | Toll: $" + v.getToll());
         }
     }
-     // Getters and setters (optional)
+    
     public long getId() {
         return id;
     }

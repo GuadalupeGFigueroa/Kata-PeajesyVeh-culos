@@ -21,9 +21,9 @@ public class Truck extends Vehicle {
         this.axles = axles;
     }
 
-    @Override //sobre escribe el valor 
+    @Override 
     public void calculateToll() {
-        this.toll = 50 * axles; // Calculamos el peaje según el número de ejes
+        this.toll = 50 * axles; 
     }
  
 }

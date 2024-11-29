@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-//import org.junit.jupiter.api.Test;
 
 public class StationTest {
 
@@ -47,28 +46,20 @@ public class StationTest {
     public void testPrintReport() {
         Vehicle motorbike = new Motorbike(4, "000XYZ");
         station.registerVehicle(motorbike);
-
-        // Imprimimos para verificar manualmente (idealmente, usar mocks para verificar salida)
         station.printReport();
-        assertTrue(true); // Simula éxito
+        assertTrue(true); 
     }
     @Test
     public void testGetVehicles() {
     Vehicle truck = new Truck(3, "789GHI", 4);
     station.registerVehicle(truck);
 
-    // Verifica que la lista de vehículos tenga exactamente un elemento
     assertThat("Vehicle list should have one item", station.getVehicles(), hasSize(1));
 
-    // Verifica que el único elemento sea el esperado
     assertThat("Vehicle license plate should match", station.getVehicles().get(0).getLicensePlate(), is("789GHI"));
 }
 }
 
     
-    /*StationTest:
-
-Valida que los vehículos se registren correctamente en la estación.
-Verifica que el importe total recolectado se calcule correctamente para diferentes combinaciones de vehículos.
-Incluye una prueba para printReport que genera manualmente la salida esperada. */
+    
 
