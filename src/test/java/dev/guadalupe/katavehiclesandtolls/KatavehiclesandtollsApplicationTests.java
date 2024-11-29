@@ -4,10 +4,9 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 
-import org.junit.jupiter.api.Test;
 import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 
-import org.springframework.boot.test.context.SpringBootTest;
+
 
 
 public class KatavehiclesandtollsApplicationTests {
