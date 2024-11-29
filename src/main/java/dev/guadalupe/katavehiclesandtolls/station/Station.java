@@ -1,4 +1,4 @@
-package dev.guadalupe.katavehiclesandtolls.toll_station;
+package dev.guadalupe.katavehiclesandtolls.station;
 import java.util.ArrayList;
 import java.util.List;
 
