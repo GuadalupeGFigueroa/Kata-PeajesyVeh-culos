@@ -5,6 +5,7 @@ import dev.guadalupe.katavehiclesandtolls.motorbike.Motorbike;
 import dev.guadalupe.katavehiclesandtolls.truck.Truck;
 import org.junit.jupiter.api.Test;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class VehicleTest {
